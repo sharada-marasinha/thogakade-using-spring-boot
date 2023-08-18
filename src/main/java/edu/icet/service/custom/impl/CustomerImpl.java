@@ -2,10 +2,11 @@ package edu.icet.service.custom.impl;
 
 import edu.icet.dto.custom.Customer;
 import edu.icet.service.custom.CustomerService;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-
+@Service
 public class CustomerImpl implements CustomerService {
     ArrayList<Customer> customerList;
 
@@ -18,7 +19,6 @@ public class CustomerImpl implements CustomerService {
 
     @Override
     public List<Customer> getAll() {
-
         return this.customerList;
 
     }
@@ -26,5 +26,11 @@ public class CustomerImpl implements CustomerService {
     @Override
     public Customer search(String s) {
         return null;
+    }
+
+    @Override
+    public boolean add(Customer dt) {
+        customerList.add(dt);
+        return true;
     }
 }
